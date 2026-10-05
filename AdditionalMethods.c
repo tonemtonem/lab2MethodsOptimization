@@ -64,3 +64,10 @@ void PrintSimplexTable(const SimplexTable* table) {
     printf("\n========================================================================================\n");
     printf("\n\n");
 }
+SimplexData* MakeData(SimplexData* data) {
+    SimplexData* newData;
+
+
+    return newData;
+
+}

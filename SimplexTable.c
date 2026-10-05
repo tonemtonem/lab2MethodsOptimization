@@ -63,7 +63,7 @@ void FillSimplexTable(SimplexTable* table, const SimplexData* data) {
     table->cells[data->countOfRestr][0] = -sign * data->funArr[0];
 }
 
-void FillSimpleTableAfterIter(SimplexTable* table, const int allowingRow, const int allowingCol) {
+void FillSimpleTableAfterIter(SimplexTable* table,  int allowingRow,  int allowingCol) {
     if (table == NULL || allowingRow < 0 || allowingCol < 0) return;
     double* oldRow = malloc(table->cols * sizeof(double));
     double* oldCol = malloc(table->rows * sizeof(double));
@@ -79,7 +79,6 @@ void FillSimpleTableAfterIter(SimplexTable* table, const int allowingRow, const 
         oldRow[i] = table->cells[i][allowingCol];
     }
     const double pivot = 1 / table->cells[allowingRow][allowingCol];
-    const double valueOfAllow = table->cells[allowingRow][allowingCol];
     for (int i = 0; i< table->rows; i++) {
         for (int j = 0; j< table->cols; j++) {
             if (i == allowingRow && j == allowingCol)
